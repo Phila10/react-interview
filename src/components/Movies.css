@@ -1,10 +1,42 @@
 .movie-container {
-    background-color: grey;
-    width: 20%;
-    height: 200px;
+    background-color: #F3D869 ;
+    width: 26%;
+    height: 350px;
     margin: 20px;
     padding-left:10px;
 }
 .movie-title {
     font-size: 1.5em;
+}
+.container-movie-button-like-dislike {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 35%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie-p{
+    margin-right: 5%;
+}
+.movie-button-like {
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+    margin-right: 3%;
+}
+.movie-button-dislike {
+    border-radius: 30px;
+    height: 60px;
+    width: 60px;
+    margin-right: 3%;
+}
+
+.movie-button-delete  {
+    background-color: blue;
+    position: relative;
+    left: 44%;
+    margin-top: 1.5%;
 }

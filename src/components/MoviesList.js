@@ -6,8 +6,8 @@ class MoviesList extends React.Component {
   constructor(props){
     super(props)
   this.state = {
-
-  movie : 
+    likesmovies:[],
+    movie : 
   [
     {
       id: '1',
@@ -69,23 +69,48 @@ class MoviesList extends React.Component {
       category: 'Thriller',
       likes: 22,
       dislikes: 12
-    },
-  ]}}
+    }
+ 
+
+  ]
+}
+// this.likeHandler = this.likeHandler.bind(this);
+}
+
 
   handleClick = (e) => {
     const newMovie = this.state.movie
     const index = newMovie.findIndex(item => item.id === (e))
-    const remove = window.confirm("Etes-vous sûr de bien vouloir retirer ce produit de la liste ?")
+    const remove = window.confirm("Etes-vous sûr de bien vouloir retirer ce film de la site ?")
     if (remove) {
         newMovie.splice(index, 1)
         this.setState({ movie : newMovie})
     }
 }
+
+// likeHandler =(ok) => {
+
+//   this.setState({
+//  likesmovies: ok.target.value
+//   
+//    })
+// }
+
+// dislikeHandler() {
+//   if (this.state.dislikeCount === dislikes) {
+//     this.setState(state => ({
+//       dislikeCount: state.dislikeCount + 1,
+//       likeCount: likes
+//     }));
+//   }
+// }
 render() 
-{
+{ 
+  console.log(this.props.category)
   return (
     <div className="movieslist-container">
-     {this.state.movie.map((id) => (<Movies {...id} handleClick={this.handleClick}/>))}
+     {this.state.movie.filter(blabla =>  blabla.category.includes(this.props.category))
+                      .map((id) => (<Movies {...id} handleClick={this.handleClick} likehandler={this.likeHandler}/>))}
     </div>
   )
 }
