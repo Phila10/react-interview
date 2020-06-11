@@ -16,7 +16,7 @@ class App extends React.Component {
   render() {
   return (
     <div className="App">
-          <select onChange={this.handleChange}>
+          <select className="app-select" onChange={this.handleChange}>
             <option id="Default"></option>
             <option id="Comedy">Comedy</option>
             <option id="Animation">Animation</option>

@@ -1,12 +1,13 @@
 .movie-container {
-    background-color: #F3D869 ;
-    width: 26%;
-    height: 350px;
-    margin: 20px;
-    padding-left:10px;
+    display: flex;
+    border: 2px solid;
+    border-radius: 7px 7px;
+    background-color: rgba(204, 204, 204, 0.938);
+    width: 40%;
 }
 .movie-title {
-    font-size: 1.5em;
+    margin:0;
+    padding: 0 20px;
 }
 .container-movie-button-like-dislike {
     display: flex;
@@ -18,9 +19,7 @@
     margin-right: auto;
 }
 
-.movie-p{
-    margin-right: 5%;
-}
+
 .movie-button-like {
     border-radius: 30px;
     height: 60px;
@@ -35,8 +34,26 @@
 }
 
 .movie-button-delete  {
-    background-color: blue;
-    position: relative;
-    left: 44%;
-    margin-top: 1.5%;
+  background-color: rgb(118, 118, 185);
+  width: 50px;
+  border: none;
+  height: 40px;
+  border-radius: 0 5px 0 0;
+  color: white;
+  font-size: 15px;
+}
+.movie-button-delete:hover {
+    background-color: rgb(141, 141, 214);
+    color: black;    
+    }
+.description {  
+display: flex;
+flex-direction: column;
+width: 28%;
+margin-left: 10px;
+}
+.movie-img {
+    height: 70%;
+    width: 70%;
+    border-radius: 5px 0 0 5px;
 }

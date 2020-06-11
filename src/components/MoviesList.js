@@ -6,7 +6,7 @@ class MoviesList extends React.Component {
   constructor(props){
     super(props)
   this.state = {
-    likesmovies:[],
+    canSee: 4,
     movie : 
   [
     {
@@ -46,12 +46,6 @@ class MoviesList extends React.Component {
       likes: 11,
       dislikes: 3
     }, {
-      id: '7',
-      title: 'Pulp Fiction',
-      category: 'Thriller',
-      likes: 12333,
-      dislikes: 32
-    }, {
       id: '8',
       title: 'Seven',
       category: 'Thriller',
@@ -75,6 +69,7 @@ class MoviesList extends React.Component {
   ]
 }
 // this.likeHandler = this.likeHandler.bind(this);
+this.loadMore = this.loadMore.bind(this)
 }
 
 
@@ -88,32 +83,40 @@ class MoviesList extends React.Component {
     }
 }
 
-// likeHandler =(ok) => {
+loadMore = () => {
+  this.setState((old)=> {
+    return {canSee: old.canSee + 4}
+  })
+}
 
-//   this.setState({
-//  likesmovies: ok.target.value
-//   
+ 
+  
 //    })
 // }
-
-// dislikeHandler() {
-//   if (this.state.dislikeCount === dislikes) {
+// likeHandler = () => {
+//   const likesCount = this.state.movie.likes
+//   this.setState((likes) => {
+//     return {likesCount: likes.likesCount +1}
+//   })
+// }
+// likeHandler() {
+//   if (this.state.likesmovies === this.state.movie.likes) {
 //     this.setState(state => ({
-//       dislikeCount: state.dislikeCount + 1,
-//       likeCount: likes
+//       likesmovies: state.likesmovies + 1
 //     }));
 //   }
 // }
 render() 
 { 
-  console.log(this.props.category)
   return (
+    <div>
     <div className="movieslist-container">
-     {this.state.movie.filter(blabla =>  blabla.category.includes(this.props.category))
-                      .map((id) => (<Movies {...id} handleClick={this.handleClick} likehandler={this.likeHandler}/>))}
+     {this.state.movie.filter(blabla =>  blabla.category.includes(this.props.category)).slice(0,this.state.canSee).map((id) => (<Movies {...id} handleClick={this.handleClick} likehandler={this.likeHandler}/>))}
+    </div>
+    <button className="movieslist-loadmore-button" type="button" onClick={this.loadMore}>Load more</button>
     </div>
   )
 }
 }
-  
+
   export default MoviesList;

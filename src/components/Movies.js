@@ -3,25 +3,17 @@ import './Movies.css'
 
 
 
-const Movies = ({handleClick,id,title,category,likes,dislikes, likeHandler}) => {
+const Movies = ({handleClick,id,title,category,likes,dislikes}) => {
 
     return (
-
-    <div className="movie-container">
-        <button className="movie-button-delete" onClick={() => handleClick(id)}>X</button>
-        <h1 className="movie-title">{title}</h1>
-        <p>{category}</p>
-        <div className="container-movie-button-like-dislike">
-        <button className="movie-button-like">Likes</button>
-        <p className="movie-p">{likes}</p>
-        <button className="movie-button-dislike" onClick={() => likeHandler}>Dislikes</button>
-        <p className="movie-p" >{dislikes}</p>
-
-        </div>
-  
-
-
-    </div>
+          <figure className="movie-container">
+              <img className="movie-img" href="" src="https://via.placeholder.com/300"></img>
+          <div className="desctiption">
+            <h1 className="movie-title">{title}</h1>
+            <p>{category}</p>
+          </div>
+          <button className="movie-button-delete" onClick={() => handleClick(id)}>X</button>
+        </figure>
     )
 }
 
