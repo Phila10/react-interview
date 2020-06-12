@@ -89,7 +89,9 @@ loadMore = () => {
   })
 }
 
- 
+// likeHandler = () => (
+
+// )
   
 //    })
 // }
@@ -111,7 +113,7 @@ render()
   return (
     <div>
     <div className="movieslist-container">
-     {this.state.movie.filter(blabla =>  blabla.category.includes(this.props.category)).slice(0,this.state.canSee).map((id) => (<Movies {...id} handleClick={this.handleClick} likehandler={this.likeHandler}/>))}
+     {this.state.movie.filter(movies =>  movies.category.includes(this.props.category)).slice(0,this.state.canSee).map((id) => (<Movies {...id} handleClick={this.handleClick} likehandler={this.likeHandler}/>))}
     </div>
     <button className="movieslist-loadmore-button" type="button" onClick={this.loadMore}>Load more</button>
     </div>

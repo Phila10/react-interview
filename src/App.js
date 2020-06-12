@@ -8,9 +8,8 @@ class App extends React.Component {
     category: ''
   }
 
-  handleChange = (ui) => {
-    this.setState({category: ui.target.value})
-    console.log(ui.target.value)
+  handleChange = (e) => {
+    this.setState({category: e.target.value})
   }
 
   render() {
