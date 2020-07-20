@@ -18,7 +18,7 @@ const Movies = ({ handleClick, id, title, category, likes, dislikes }) => {
         <p>{category}</p>
         </div>
         <div>
-          <p className="movie-p-like">like : {likes}</p>
+          <p className="movie-p-like">like: {likes}</p>
           <p>dislike : {dislikes}</p>
         </div>
       </div>
